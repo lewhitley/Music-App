@@ -1,0 +1,4 @@
+<h2>Add an Album</h2>
+
+<%= render "form", action:albums_url, method: :post,
+  album: nil, band_id: params[:band_id].to_i %>

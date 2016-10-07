@@ -1,0 +1,5 @@
+<h2>Edit an Album</h2>
+
+<%= render "form", action:album_url(params[:id]), method: :patch,
+  album: Album.find_by_id(params[:id]),
+  band_id:Album.find_by_id(params[:id]).band_id %>

@@ -1,0 +1,5 @@
+<nav>
+  <%= button_to "Edit Track", edit_track_url(@track), method: :get %>
+  <%= button_to "Delete Track", track_url, method: :delete %>
+  <%= button_to "Back to Album", album_url(@track.album_id), method: :get %>
+</nav>

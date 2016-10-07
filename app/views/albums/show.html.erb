@@ -1,0 +1,12 @@
+<h2><%= @album.title %></h2>
+<p><%= @album.recording %></p>
+<br>
+<ul>
+  <% Track.where(album_id: @album.id).each do |track|%>
+    <li>
+      <%= link_to track.song, track_url(track) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= render "footer" %>

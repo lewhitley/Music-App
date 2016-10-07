@@ -1,0 +1,6 @@
+<nav>
+  <%= button_to "Add Album", new_band_album_url(@band), method: :get %>
+  <%= button_to "Bands Index", bands_url, method: :get %>
+  <%= button_to "Edit Band", edit_band_url, method: :get %>
+  <%= button_to "Delete Band", band_url(@band), method: :delete %>
+</nav>

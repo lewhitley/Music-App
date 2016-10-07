@@ -1,0 +1,18 @@
+<h2><%= @track.song %></h2>
+
+<body>
+  <p><%= @track.track_type %> Track</p>
+  <br>
+  <p><%= @track.lyrics %></p>
+  <br>
+  <%= render "notes/form" %>
+  <ul>
+    <% @track.notes.each do |note|%>
+    <li>
+      <% render "notes/note", note: note %>
+    </li>
+    <% end %>
+  </ul>
+</body>
+
+<%= render 'footer', track: @track %>

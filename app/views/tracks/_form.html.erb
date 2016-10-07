@@ -1,0 +1,31 @@
+<form action="<%= action %>" method="post">
+  <input type="hidden" name="_method" value= "<%= method %>">
+  <%= auth_token %>
+  <label for="track_album_id">Album</label>
+  <select id="track_album_id" name="track[album_id]" >
+    <% Album.all.each do |album| %>
+    <option value="<%= album.id %>" <%= "selected" if album.id == album_id%>>
+      <%= album.title %>
+    </option>
+    <% end %>
+  </select>
+  <br>
+  <label>
+    Song name
+    <input type="text" name="track[song]" value="<%= @track ? @track.song : nil %>">
+  </label>
+  <br>
+  <label for="track_type">Regular</label>
+  <input type="radio" name="track[track_type]" id="track_type" value="Regular"
+    <%= "checked" if track && track.track_type == "Regular"%>>
+  <label for="track_type">Bonus</label>
+  <input type="radio" name="track[track_type]" id="track_type" value="Bonus"
+    <%= "checked" if track && track.track_type == "Bonus"%>>
+  <br>
+  <label>
+    Lyrics
+    <textarea name="track[lyrics]"><%= @track ? @track.lyrics : nil %></textarea>
+  </label>
+  <br>
+  <input type="submit" value="Submit">
+</form>

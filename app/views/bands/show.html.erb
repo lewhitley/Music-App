@@ -1,0 +1,11 @@
+<h2><%= @band.name %></h2>
+
+<ul>
+  <% Album.where(band_id: @band.id).each do |album| %>
+    <li>
+      <%= link_to album.title, album_url(album) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= render "footer"%>

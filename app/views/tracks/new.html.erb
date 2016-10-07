@@ -1,0 +1,4 @@
+<h2>Add a Track</h2>
+
+<%= render "form", action: tracks_url, method: "POST", track: nil,
+  album_id: params[:album_id].to_i%>

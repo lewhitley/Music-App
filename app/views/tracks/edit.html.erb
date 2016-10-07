@@ -1,0 +1,5 @@
+<h2>Edit a Track</h2>
+<p><%= @track.song %></p>
+
+<%= render "form", action: track_url(@track), method: :patch, track: @track,
+  album_id: Track.find_by_id(params[:id]).album_id %>
